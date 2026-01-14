@@ -1,0 +1,23 @@
+{
+  "name": "javafx-password-saver",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21"
+    },
+    "ghcr.io/devcontainers/features/gradle:1": {}
+  },
+  "onCreateCommand": "chmod +x gradlew",
+  "postCreateCommand": "./gradlew build",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.java",
+        "vscjava.vscode-java-pack",
+        "joaompinto.vscode-javafx"
+      ]
+    }
+  },
+  "postStartCommand": "sudo apt-get update && sudo apt-get install -y --no-install-recommends openssl gnupg && sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/*",
+  "remoteUser": "vscode"
+}
