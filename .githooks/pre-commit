@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ -x "./gradlew" ]]; then
+  ./gradlew checkstyleMain pmdMain spotbugsMain dependencyCheckAnalyze --no-daemon
+else
+  echo "gradlew not found or not executable."
+  echo "Run: ./gradlew checkstyleMain pmdMain spotbugsMain dependencyCheckAnalyze"
+  exit 1
+fi

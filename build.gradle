@@ -2,6 +2,7 @@ plugins {
     id "application"
     id "org.openjfx.javafxplugin" version "0.0.14"
     id "checkstyle"
+    id "pmd"
     id "com.github.spotbugs" version "6.0.27"
     id "org.owasp.dependencycheck" version "10.0.4"
 }
@@ -34,6 +35,13 @@ dependencies {
 checkstyle {
     toolVersion = "10.17.0"
     configFile = file("config/checkstyle/checkstyle.xml")
+}
+
+pmd {
+    toolVersion = "7.4.0"
+    consoleOutput = true
+    ruleSets = []
+    ruleSetFiles = files("config/pmd/pmd.xml")
 }
 
 spotbugs {
