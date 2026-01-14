@@ -10,6 +10,9 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# Gradle cache
+.gradle/
+
 # Package Files #
 *.jar
 !gradle/wrapper/gradle-wrapper.jar
