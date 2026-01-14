@@ -13,6 +13,9 @@
 # Gradle cache
 .gradle/
 
+# Build directory
+build/
+
 # Package Files #
 *.jar
 !gradle/wrapper/gradle-wrapper.jar
@@ -21,6 +24,7 @@
 *.ear
 *.zip
 *.tar.gz
+*.tar
 *.rar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
