@@ -49,7 +49,7 @@ spotbugs {
 }
 
 dependencyCheck {
-    failBuildOnCVSS = 11
+    failBuildOnCVSS = 10.0
     analyzers.assemblyEnabled = false
     skipConfigurations = ["testImplementation", "testRuntimeOnly"]
 }
