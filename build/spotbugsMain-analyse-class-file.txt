@@ -1,2 +1,0 @@
-/home/runner/work/java-javafx-password-saver/java-javafx-password-saver/build/classes/java/main/com/example/passwordsaver/MainController.class
-/home/runner/work/java-javafx-password-saver/java-javafx-password-saver/build/classes/java/main/com/example/passwordsaver/App.class
