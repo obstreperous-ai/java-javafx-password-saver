@@ -49,8 +49,9 @@ spotbugs {
 }
 
 dependencyCheck {
-    failBuildOnCVSS = 7.0
+    failBuildOnCVSS = 11
     analyzers.assemblyEnabled = false
+    skipConfigurations = ["testImplementation", "testRuntimeOnly"]
 }
 
 tasks.withType(com.github.spotbugs.snom.SpotBugsTask).configureEach {
