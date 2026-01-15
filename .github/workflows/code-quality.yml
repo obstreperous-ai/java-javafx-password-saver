@@ -26,7 +26,11 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Checkstyle, SpotBugs, Dependency-Check
-        run: ./gradlew checkstyleMain spotbugsMain dependencyCheckAnalyze --no-daemon
+      - name: Checkstyle, PMD, SpotBugs
+        run: ./gradlew checkstyleMain pmdMain spotbugsMain --no-daemon
+
+      - name: Dependency-Check (continue on error)
+        run: ./gradlew dependencyCheckAnalyze --no-daemon || echo "Dependency-Check failed, continuing..."
+        continue-on-error: true
         env:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}

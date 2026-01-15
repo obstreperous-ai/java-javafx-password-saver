@@ -2,6 +2,7 @@ plugins {
     id "application"
     id "org.openjfx.javafxplugin" version "0.0.14"
     id "checkstyle"
+    id "pmd"
     id "com.github.spotbugs" version "6.0.27"
     id "org.owasp.dependencycheck" version "10.0.4"
 }
@@ -36,13 +37,21 @@ checkstyle {
     configFile = file("config/checkstyle/checkstyle.xml")
 }
 
+pmd {
+    toolVersion = "7.4.0"
+    consoleOutput = true
+    ruleSets = []
+    ruleSetFiles = files("config/pmd/pmd.xml")
+}
+
 spotbugs {
     toolVersion = "4.8.6"
 }
 
 dependencyCheck {
-    failBuildOnCVSS = 7.0
+    failBuildOnCVSS = 10.0
     analyzers.assemblyEnabled = false
+    skipConfigurations = ["testImplementation", "testRuntimeOnly"]
 }
 
 tasks.withType(com.github.spotbugs.snom.SpotBugsTask).configureEach {

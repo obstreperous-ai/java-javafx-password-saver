@@ -11,8 +11,11 @@
         <property name="ignorePattern" value="^package\\s|^import\\s|http(s)?://"/>
     </module>
     <module name="NewlineAtEndOfFile"/>
-    <module name="TrailingWhitespace"/>
     <module name="TreeWalker">
+        <module name="RegexpSinglelineJava">
+            <property name="format" value="\s+$"/>
+            <property name="message" value="Trailing whitespace"/>
+        </module>
         <module name="EmptyLineSeparator"/>
         <module name="NeedBraces"/>
         <module name="WhitespaceAfter"/>
