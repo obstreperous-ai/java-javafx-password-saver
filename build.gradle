@@ -52,6 +52,9 @@ dependencyCheck {
     failBuildOnCVSS = 10.0
     analyzers.assemblyEnabled = false
     skipConfigurations = ["testImplementation", "testRuntimeOnly"]
+    nvd {
+        apiKey = System.getenv("NVD_API_KEY") ?: (findProperty("nvdApiKey") as String?)
+    }
 }
 
 tasks.withType(com.github.spotbugs.snom.SpotBugsTask).configureEach {
