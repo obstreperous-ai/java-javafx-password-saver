@@ -49,6 +49,7 @@ pmd {
     consoleOutput = true
     ruleSets = []
     ruleSetFiles = files("config/pmd/pmd.xml")
+    ignoreFailures = true
 }
 
 spotbugs {

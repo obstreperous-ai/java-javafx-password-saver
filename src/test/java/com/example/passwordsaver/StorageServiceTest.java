@@ -15,7 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class StorageServiceTest {
     private StorageService storageService;
+
     private EncryptionService encryptionService;
+
     private static final String TEST_MASTER_PASSWORD = "testMasterPassword123";
 
     @BeforeEach
