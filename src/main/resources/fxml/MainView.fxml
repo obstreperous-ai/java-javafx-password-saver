@@ -3,7 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -12,40 +12,35 @@
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.passwordsaver.MainController">
     <top>
-        <HBox spacing="10" alignment="CENTER_LEFT">
+        <VBox spacing="12">
             <padding>
                 <Insets top="12" right="16" bottom="12" left="16"/>
             </padding>
-            <Label text="Password Saver" styleClass="title"/>
-            <Label fx:id="statusLabel" styleClass="status"/>
-        </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Password Saver" styleClass="title"/>
+                <Label fx:id="statusLabel" styleClass="status"/>
+            </HBox>
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <Label text="Master Password:"/>
+                <PasswordField fx:id="masterPasswordField" promptText="Enter master password"/>
+            </HBox>
+        </VBox>
     </top>
     <center>
-        <BorderPane>
-            <left>
-                <VBox spacing="8">
-                    <padding>
-                        <Insets top="12" right="12" bottom="12" left="16"/>
-                    </padding>
-                    <Label text="Entries" styleClass="section-title"/>
-                    <ListView prefWidth="280"/>
-                </VBox>
-            </left>
-            <center>
-                <VBox spacing="12">
-                    <padding>
-                        <Insets top="16" right="24" bottom="16" left="24"/>
-                    </padding>
-                    <Label text="Details" styleClass="section-title"/>
-                    <TextField promptText="Service"/>
-                    <TextField promptText="Username"/>
-                    <TextField promptText="Password"/>
-                    <HBox spacing="8">
-                        <Button text="Save"/>
-                        <Button text="Clear"/>
-                    </HBox>
-                </VBox>
-            </center>
-        </BorderPane>
+        <VBox spacing="12">
+            <padding>
+                <Insets top="16" right="24" bottom="16" left="24"/>
+            </padding>
+            <Label text="Password Entry" styleClass="section-title"/>
+            <Label text="Entry Name:"/>
+            <TextField fx:id="entryNameField" promptText="e.g., Gmail, GitHub"/>
+            <Label text="Password:"/>
+            <PasswordField fx:id="entryPasswordField" promptText="Enter password to store"/>
+            <HBox spacing="8">
+                <Button fx:id="saveButton" text="Save" onAction="#handleSave"/>
+                <Button fx:id="retrieveButton" text="Retrieve" onAction="#handleRetrieve"/>
+                <Button text="Clear" onAction="#handleClear"/>
+            </HBox>
+        </VBox>
     </center>
 </BorderPane>
